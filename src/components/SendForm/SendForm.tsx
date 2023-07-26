@@ -18,7 +18,7 @@ const SendForm = () => {
           sendMessage(event, message);
           setMessage('');
         }}
-        style={{ width: '100%', display: 'flex', gap: '15px' }}
+        style={styles.form}
       >
         <TextField
           size="small"

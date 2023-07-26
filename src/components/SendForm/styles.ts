@@ -11,5 +11,6 @@ const styles = {
     bottom: '0px',
     backgroundColor: '#ffffff',
   },
+  form: { width: '100%', display: 'flex', gap: '15px' },
 };
 export default styles;

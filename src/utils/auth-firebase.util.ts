@@ -1,11 +1,11 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithRedirect } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 import { auth, db } from '@/src/firebase';
 
 export const googleSignIn = () => {
   const provider = new GoogleAuthProvider();
-  signInWithRedirect(auth, provider);
+  return signInWithPopup(auth, provider);
 };
 
 export const signInUser = (
@@ -15,7 +15,7 @@ export const signInUser = (
 ) => {
   event.preventDefault();
   if (!email && !password) return;
-  signInWithEmailAndPassword(auth, email, password);
+  return signInWithEmailAndPassword(auth, email, password);
 };
 
 export const signOut = () => {

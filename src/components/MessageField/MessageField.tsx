@@ -9,6 +9,7 @@ import type { IMessageFieldProps } from './types';
 
 const MessageField = ({ message }: IMessageFieldProps) => {
   const [user] = useAuthState(auth);
+
   return (
     <Box
       sx={[
@@ -16,7 +17,7 @@ const MessageField = ({ message }: IMessageFieldProps) => {
         message.uid === user?.uid ? styles.senderMessage : styles.receiverMessage,
       ]}
     >
-      <Typography sx={{ textSizeAdjust: 'auto' }}>{message.text}</Typography>
+      <Typography sx={styles.text}>{message.text}</Typography>
     </Box>
   );
 };

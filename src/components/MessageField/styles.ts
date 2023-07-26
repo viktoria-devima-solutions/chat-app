@@ -11,4 +11,5 @@ export const styles = {
   receiverMessage: {
     backgroundColor: '#f5f5f5',
   },
+  text: { textSizeAdjust: 'auto' },
 };
